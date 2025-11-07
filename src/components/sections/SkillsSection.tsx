@@ -25,7 +25,7 @@ export const SkillsSection = () => {
   });
 
   return (
-    <section id="skills" className="min-h-screen flex items-center justify-center py-20 px-6">
+    <section id="skills" className="min-h-screen flex items-center justify-center py-16 sm:py-20 px-4 sm:px-6 lg:px-8">
       <div className="max-w-6xl w-full">
         <motion.div
           ref={ref}
@@ -33,14 +33,14 @@ export const SkillsSection = () => {
           animate={inView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.8 }}
         >
-          <h2 className="text-5xl md:text-6xl font-bold mb-6 text-center gradient-text">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-4 sm:mb-6 text-center gradient-text">
             Skills & Technologies
           </h2>
-          <p className="text-center text-foreground/70 mb-12 text-lg">
-            Hover over skills to learn more • Drag to explore the galaxy
+          <p className="text-center text-foreground/70 mb-8 sm:mb-12 text-sm sm:text-base lg:text-lg px-4">
+            Interactive 3D skill visualization • Drag to explore
           </p>
 
-          <div className="h-[700px] card-3d rounded-2xl overflow-hidden relative">
+          <div className="h-[400px] sm:h-[500px] md:h-[600px] lg:h-[700px] card-3d rounded-2xl overflow-hidden relative">
             <Canvas camera={{ position: [0, 2, 10], fov: 75 }}>
               <ambientLight intensity={0.3} />
               <pointLight position={[10, 10, 10]} intensity={1.5} color="#00d4ff" />
@@ -89,20 +89,20 @@ export const SkillsSection = () => {
             </Canvas>
             
             {/* Category legend */}
-            <div className="absolute bottom-4 left-4 bg-card/80 backdrop-blur-sm border border-border rounded-lg p-4">
-              <h3 className="text-sm font-bold mb-2 text-foreground">Categories</h3>
+            <div className="absolute bottom-2 sm:bottom-4 left-2 sm:left-4 bg-card/80 backdrop-blur-sm border border-border rounded-lg p-2 sm:p-4">
+              <h3 className="text-xs sm:text-sm font-bold mb-1 sm:mb-2 text-foreground">Categories</h3>
               <div className="space-y-1 text-xs">
                 <div className="flex items-center gap-2">
-                  <div className="w-3 h-3 rounded-full bg-[#61dafb]"></div>
-                  <span className="text-foreground/70">Frontend</span>
+                  <div className="w-2 h-2 sm:w-3 sm:h-3 rounded-full bg-[#61dafb]"></div>
+                  <span className="text-foreground/70 text-xs">Frontend</span>
                 </div>
                 <div className="flex items-center gap-2">
-                  <div className="w-3 h-3 rounded-full bg-[#68a063]"></div>
-                  <span className="text-foreground/70">Backend</span>
+                  <div className="w-2 h-2 sm:w-3 sm:h-3 rounded-full bg-[#68a063]"></div>
+                  <span className="text-foreground/70 text-xs">Backend</span>
                 </div>
                 <div className="flex items-center gap-2">
-                  <div className="w-3 h-3 rounded-full bg-[#a855f7]"></div>
-                  <span className="text-foreground/70">Tools</span>
+                  <div className="w-2 h-2 sm:w-3 sm:h-3 rounded-full bg-[#a855f7]"></div>
+                  <span className="text-foreground/70 text-xs">Tools</span>
                 </div>
               </div>
             </div>

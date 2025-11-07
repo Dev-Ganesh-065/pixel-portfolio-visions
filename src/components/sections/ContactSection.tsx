@@ -33,7 +33,7 @@ export const ContactSection = () => {
   };
 
   return (
-    <section id="contact" className="min-h-screen flex items-center justify-center py-20 px-6">
+    <section id="contact" className="min-h-screen flex items-center justify-center py-16 sm:py-20 px-4 sm:px-6 lg:px-8">
       <div className="max-w-4xl w-full">
         <motion.div
           ref={ref}
@@ -41,15 +41,15 @@ export const ContactSection = () => {
           animate={inView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.8 }}
         >
-          <h2 className="text-5xl md:text-6xl font-bold mb-12 text-center gradient-text">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-8 sm:mb-12 text-center gradient-text">
             Let's Connect
           </h2>
 
-          <div className="grid md:grid-cols-2 gap-8">
-            <div className="card-3d p-8 rounded-2xl">
-              <h3 className="text-2xl font-bold mb-6">Get In Touch</h3>
+          <div className="grid md:grid-cols-2 gap-4 sm:gap-6 lg:gap-8">
+            <div className="card-3d p-4 sm:p-6 lg:p-8 rounded-2xl">
+              <h3 className="text-xl sm:text-2xl font-bold mb-4 sm:mb-6">Get In Touch</h3>
               
-              <form onSubmit={handleSubmit} className="space-y-6">
+              <form onSubmit={handleSubmit} className="space-y-4 sm:space-y-6">
                 <div>
                   <Input
                     type="text"
@@ -57,7 +57,7 @@ export const ContactSection = () => {
                     value={formData.name}
                     onChange={(e) => setFormData({ ...formData, name: e.target.value })}
                     required
-                    className="bg-background/50 border-border"
+                    className="bg-background/50 border-border text-sm sm:text-base"
                   />
                 </div>
                 
@@ -68,7 +68,7 @@ export const ContactSection = () => {
                     value={formData.email}
                     onChange={(e) => setFormData({ ...formData, email: e.target.value })}
                     required
-                    className="bg-background/50 border-border"
+                    className="bg-background/50 border-border text-sm sm:text-base"
                   />
                 </div>
                 
@@ -79,43 +79,43 @@ export const ContactSection = () => {
                     onChange={(e) => setFormData({ ...formData, message: e.target.value })}
                     required
                     rows={5}
-                    className="bg-background/50 border-border resize-none"
+                    className="bg-background/50 border-border resize-none text-sm sm:text-base"
                   />
                 </div>
                 
-                <Button type="submit" className="w-full">
+                <Button type="submit" className="w-full text-sm sm:text-base">
                   Send Message
                 </Button>
               </form>
             </div>
 
-            <div className="space-y-6">
-              <div className="card-3d p-8 rounded-2xl">
-                <h3 className="text-2xl font-bold mb-4">Connect With Me</h3>
-                <p className="text-foreground/70 mb-6">
+            <div className="space-y-4 sm:space-y-6">
+              <div className="card-3d p-4 sm:p-6 lg:p-8 rounded-2xl">
+                <h3 className="text-xl sm:text-2xl font-bold mb-3 sm:mb-4">Connect With Me</h3>
+                <p className="text-foreground/70 mb-4 sm:mb-6 text-sm sm:text-base">
                   Feel free to reach out through any of these platforms. I'm always open to 
                   discussing new projects and opportunities.
                 </p>
 
-                <div className="grid grid-cols-2 gap-4">
+                <div className="grid grid-cols-2 gap-2 sm:gap-4">
                   {socialLinks.map((social) => (
                     <a
                       key={social.label}
                       href={social.href}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="flex items-center gap-3 p-4 bg-background/30 rounded-lg hover:bg-background/50 transition-colors group"
+                      className="flex items-center gap-2 sm:gap-3 p-3 sm:p-4 bg-background/30 rounded-lg hover:bg-background/50 transition-colors group"
                     >
-                      <social.icon className={`w-5 h-5 ${social.color} group-hover:scale-110 transition-transform`} />
-                      <span className="text-sm font-medium">{social.label}</span>
+                      <social.icon className={`w-4 h-4 sm:w-5 sm:h-5 ${social.color} group-hover:scale-110 transition-transform`} />
+                      <span className="text-xs sm:text-sm font-medium">{social.label}</span>
                     </a>
                   ))}
                 </div>
               </div>
 
-              <div className="card-3d p-8 rounded-2xl">
-                <h3 className="text-xl font-bold mb-2">Available for Work</h3>
-                <p className="text-foreground/70 text-sm">
+              <div className="card-3d p-4 sm:p-6 lg:p-8 rounded-2xl">
+                <h3 className="text-lg sm:text-xl font-bold mb-2">Available for Work</h3>
+                <p className="text-foreground/70 text-xs sm:text-sm">
                   Currently open to freelance projects and full-time opportunities.
                 </p>
               </div>

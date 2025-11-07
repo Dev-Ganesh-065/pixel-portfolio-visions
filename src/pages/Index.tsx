@@ -9,15 +9,15 @@ const Index = () => {
   return (
     <div className="relative">
       <Navigation />
-      <main>
+      <main className="scroll-smooth">
         <HeroSection />
         <AboutSection />
         <SkillsSection />
         <ProjectsSection />
         <ContactSection />
       </main>
-      <footer className="py-8 text-center text-foreground/60 border-t border-border">
-        <p>&copy; 2025 John Doe. Built with React, Three.js & ❤️</p>
+      <footer className="py-6 sm:py-8 text-center text-foreground/60 border-t border-border px-4">
+        <p className="text-xs sm:text-sm">&copy; 2025 John Doe. Built with React, Three.js & ❤️</p>
       </footer>
     </div>
   );

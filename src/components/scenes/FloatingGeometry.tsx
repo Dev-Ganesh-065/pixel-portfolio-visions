@@ -9,15 +9,15 @@ export const FloatingGeometry = () => {
   const ringRef = useRef<THREE.Mesh>(null);
   const particlesRef = useRef<THREE.Group>(null);
 
-  // Generate particle positions once
+  // Generate particle positions once - reduced for performance
   const particlePositions = useMemo(() => {
-    return Array.from({ length: 200 }).map(() => ({
+    return Array.from({ length: 100 }).map(() => ({
       position: [
-        (Math.random() - 0.5) * 25,
-        (Math.random() - 0.5) * 25,
-        (Math.random() - 0.5) * 25,
+        (Math.random() - 0.5) * 20,
+        (Math.random() - 0.5) * 20,
+        (Math.random() - 0.5) * 20,
       ] as [number, number, number],
-      speed: Math.random() * 0.5 + 0.2,
+      speed: Math.random() * 0.4 + 0.2,
       offset: Math.random() * Math.PI * 2,
     }));
   }, []);
